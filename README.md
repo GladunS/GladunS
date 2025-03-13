@@ -1,8 +1,9 @@
 ## Hi there 👋
 
-<p align="center">
-💻 Computer Science Student 🚀 Learning C++ & Java | 🌱 Currently working through fundamentals and building small projects | 📚 Exploring <b>Algorithms and Data Structures</b> | 🎯 Goals: Build a personal portfolio of innovative applications  
-</p>
+💻 **Computer Science Student** |  | 🚀 Learning C++ & Java  
+
+🌱 Currently working through fundamentals and building small projects  
+🎯 Goals: Contribute to Open Source & Build a cool project  
 
 
 ---
