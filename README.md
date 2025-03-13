@@ -4,7 +4,7 @@
 
 🌱 Currently learning **C++ and Java**  
 📚 Exploring ** Algorithms and Data Structures**  
-🎯 Goals:  
+🎯 Goals: Build a personal portfolio of innovative applications 
 
 ---
 
@@ -17,7 +17,7 @@
 ## 📊 GitHub Activity
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=GladunS&show_icons=true&theme=radical)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sofiagladun&layout=compact&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=GladunS&layout=compact&theme=radical)
 
 ---
 
