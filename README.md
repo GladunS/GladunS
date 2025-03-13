@@ -1,16 +1,27 @@
 ## Hi there 👋
 
-<!--
-**GladunS/GladunS** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+💻 **Computer Science Student** | 🎨 Aesthetic Enthusiast | 🚀 Learning C++ & Java  
 
-Here are some ideas to get you started:
+🌱 Currently learning **C++ and Java**  
+📚 Exploring ** Algorithms and Data Structures**  
+🎯 Goals:  
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## ✨ Tech Stack  
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)  
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)  
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
+
+---
+
+📊 GitHub Activity
+(https://github-readme-stats.vercel.app/api?username=GladunS&show_icons=true&theme=radical)
+(https://github-readme-stats.vercel.app/api/top-langs/?username=sofiagladun&layout=compact&theme=radical)
+---
+
+### 📝 Quote of the Day  
+*“The history of C++ is basically bolting on features to support a string class”* — *Joel Sponsky*
+
+💌 **Let's Connect!**
+Code. Create. Innovate. Repeat. ⚡
