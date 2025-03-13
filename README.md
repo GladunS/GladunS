@@ -1,8 +1,8 @@
 ## Hi there 👋
 
-💻 **Computer Science Student**  🚀 Learning C++ & Java  
+💻 **Computer Science Student**  🚀 *Learning C++ & Java*  
 
-🌱 Currently learning **C++ and Java**  
+🌱 Currently working through fundamentals and building small projects
 📚 Exploring ** Algorithms and Data Structures**  
 🎯 Goals: Build a personal portfolio of innovative applications 
 
