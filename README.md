@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-💻 **Computer Science Student** | 🎨 Aesthetic Enthusiast | 🚀 Learning C++ & Java  
+💻 **Computer Science Student**  🚀 Learning C++ & Java  
 
 🌱 Currently learning **C++ and Java**  
 📚 Exploring ** Algorithms and Data Structures**  
