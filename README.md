@@ -19,7 +19,7 @@
 
 ---
 
-### 📝 Quote of the Day  
+## 📝 Quote of the Day  
 > *“The history of C++ is basically bolting on features to support a string class”* — *Joel Sponsky*
 --
 
