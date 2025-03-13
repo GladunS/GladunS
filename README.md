@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-💻 **Computer Science Student** |  | 🚀 Learning C++ & Java  
+## 💻 **Computer Science Student** |  | 🚀 Learning C++ & Java  
 
 🌱 Currently working through fundamentals and building small projects  
 🎯 Goals: Contribute to Open Source & Build a cool project  
@@ -20,9 +20,9 @@
 ---
 
 ### 📝 Quote of the Day  
-#> *“The history of C++ is basically bolting on features to support a string class”* — *Joel Sponsky*
+> *“The history of C++ is basically bolting on features to support a string class”* — *Joel Sponsky*
 --
 
 ## 💌 Let's Connect!  
-# Code. Create. Innovate. Repeat. ⚡
+#### Code. Create. Innovate. Repeat. ⚡
 
