@@ -23,5 +23,6 @@
 > *“The history of C++ is basically bolting on features to support a string class”* — *Joel Sponsky*
 --
 
-##💌 **Let's Connect!**
-*Code. Create. Innovate. Repeat.* ⚡
+## 💌 Let's Connect!  
+### Code. Create. Innovate. Repeat. ⚡
+
