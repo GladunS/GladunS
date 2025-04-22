@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Еко Магазин Одягу</title>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #2a9d8f; /* Бірюзовий фон */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23218577' d='M30,50 C35,40 40,35 50,35 C60,35 65,40 70,50 C65,60 60,65 50,65 C40,65 35,60 30,50 Z'/%3E%3Cpath fill='%23218577' d='M70,30 C75,20 80,15 90,15 C100,15 105,20 110,30 C105,40 100,45 90,45 C80,45 75,40 70,30 Z' transform='scale(0.7) translate(20, 0)'/%3E%3Cpath fill='%23218577' d='M10,30 C15,20 20,15 30,15 C40,15 45,20 50,30 C45,40 40,45 30,45 C20,45 15,40 10,30 Z' transform='scale(0.7) translate(-10, 0)'/%3E%3C/svg%3E");
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: rgba(20, 83, 76, 0.9); /* Темніший бірюзовий з прозорістю */
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffcad4;
+      text-decoration: none;
+      letter-spacing: 1px;
+      margin-right: 1rem;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0.5rem 1rem;
+    }
+
+    nav a {
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #ffb3cb; /* Трохи яскравіший рожевий для підкреслення */
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffb3cb; /* Трохи яскравіший рожевий при наведенні */
+    }
+
+    nav a:hover:after {
+      width: 100%;
+    }
+
+    /* User Actions */
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .action-icon {
+      position: relative;
+      color: #ffd3e1;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .action-icon:hover {
+      color: #ffb3cb;
+    }
+
+    .action-icon i {
+      font-size: 1.3rem;
+    }
+
+    .badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #e76f51;
+      color: white;
+      font-size: 0.7rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Search Container */
+    .search-container {
+      position: relative;
+      margin-right: 1rem;
+    }
+
+    .search-box {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: -10px;
+      width: 280px;
+      background-color: rgba(20, 83, 76, 0.95);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 110;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.7rem;
+      border: 2px solid #ffcad4;
+      border-radius: 20px;
+      background-color: rgba(42, 157, 143, 0.3);
+      color: #ffd3e1;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input::placeholder {
+      color: #ffd3e1;
+      opacity: 0.7;
+    }
+
+    .search-box input:focus {
+      border-color: #ffb3cb;
+      background-color: rgba(42, 157, 143, 0.5);
+    }
+
+    .search-results {
+      margin-top: 0.8rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .result-item:hover {
+      background-color: rgba(255, 202, 212, 0.1);
+    }
+
+    .result-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 0.8rem;
+    }
+
+    .result-info h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+      color: #ffcad4;
+    }
+
+    .result-info p {
+      font-size: 0.8rem;
+      color: #ffd3e1;
+      opacity: 0.9;
+    }
+
+    /* Liked Items Container */
+    .liked-container {
+      position: relative;
+    }
+
+    .liked-box {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: -80px;
+      width: 300px;
+      background-color: rgba(20, 83, 76, 0.95);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 110;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .liked-box h3 {
+      color: #ffcad4;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .liked-items {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .liked-item {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255, 211, 225, 0.2);
+    }
+
+    .liked-item:last-child {
+      border-bottom: none;
+    }
+
+    .liked-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+
+    .liked-info {
+      flex-grow: 1;
+    }
+
+    .liked-info h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+      color: #ffcad4;
+    }
+
+    .liked-info p {
+      font-size: 0.8rem;
+      color: #ffd3e1;
+    }
+
+    .remove-btn {
+      color: #e76f51;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .remove-btn:hover {
+      opacity: 1;
+    }
+
+    .view-all-liked {
+      display: block;
+      text-align: center;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      background-color: rgba(42, 157, 143, 0.6);
+      color: #ffd3e1;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .view-all-liked:hover {
+      background-color: rgba(255, 202, 212, 0.2);
+      color: #ffcad4;
+    }
+
+    /* Cart Container */
+    .cart-container {
+      position: relative;
+    }
+
+    .cart-box {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: -120px;
+      width: 320px;
+      background-color: rgba(20, 83, 76, 0.95);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 110;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .cart-box h3 {
+      color: #ffcad4;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .cart-items {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255, 211, 225, 0.2);
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+
+    .cart-info {
+      flex-grow: 1;
+    }
+
+    .cart-info h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+      color: #ffcad4;
+    }
+
+    .cart-info p {
+      font-size: 0.8rem;
+      color: #ffd3e1;
+    }
+
+    .cart-quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 0.3rem;
+    }
+
+    .quantity-btn {
+      background: rgba(42, 157, 143, 0.6);
+      color: #ffd3e1;
+      border: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quantity-btn:hover {
+      background-color: rgba(255, 202, 212, 0.2);
+    }
+
+    .quantity-value {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      color: #ffd3e1;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 211, 225, 0.3);
+      margin-top: 0.5rem;
+    }
+
+    .cart-total h4 {
+      color: #ffcad4;
+      font-size: 1rem;
+    }
+
+    .cart-total p {
+      color: #ffd3e1;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: rgba(42, 157, 143, 0.8);
+      color: #ffd3e1;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .checkout-btn:hover {
+      background-color: rgba(255, 202, 212, 0.2);
+      color: #ffcad4;
+    }
+
+    /* Menu Section */
+    #menu {
+      display: none; /* Спочатку меню приховане */
+      background-color: rgba(20, 83, 76, 0.9); /* Темніший бірюзовий фон */
+      color: #ffd3e1;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    #menu p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #ffcad4;
+    }
+
+    #menu ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    #menu li {
+      margin-bottom: 1rem;
+    }
+
+    #menu a {
+      color: #ffcad4;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(42, 157, 143, 0.6);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      display: block;
+      min-width: 160px;
+    }
+
+    #menu a:hover {
+      background-color: rgba(255, 202, 212, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Welcome Section */
+    .welcome {
+      text-align: center;
+      margin: 4rem 0;
+      padding: 0 1rem;
+      background-color: rgba(20, 83, 76, 0.7); /* Напівпрозорий темніший бірюзовий фон */
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #ffcad4; /* Блідо-рожевий заголовок */
+      line-height: 1.2;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* Image Section */
+    .image {
+      text-align: center;
+      margin: 3rem 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.5s ease;
+    }
+
+    .image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Get Started Button */
+    .get-started {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(20, 83, 76, 0.9); /* Темніший бірюзовий з прозорістю */
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: 2px solid #ffcad4; /* Блідо-рожева рамка */
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background-color: rgba(255, 202, 212, 0.2);
+      top: 0;
+      left: -10%;
+      transform: skew(-20deg);
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .button:hover:after {
+      width: 120%;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .button span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(20, 83, 76, 0.9); /* Темніший бірюзовий з прозорістю */
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-media a {
+      color: #ffd3e1; /* Блідо-рожевий текст */
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .social-media a:hover {
+      color: #ffb3cb; /* Трохи яскравіший рожевий при наведенні */
+    }
+
+    /* Overlay for closing dropdowns when clicking outside */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 90;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .header-container {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .logo {
+        order: 1;
+      }
+
+      .user-actions {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .welcome h1 {
+        font-size: 2rem;
+      }
+
+      .welcome p {
+        font-size: 1rem;
+      }
+
+      #menu ul {
+        gap: 1rem;
+      }
+
+      #menu a {
+        font-size: 1rem;
+        min-width: 140px;
+      }
+
+      .search-box, .liked-box, .cart-box {
+        width: 280px;
+        right: -50px;
+      }
+
+      .cart-box {
+        right: -100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .user-actions {
+        gap: 0.8rem;
+      }
+
+      .search-box, .liked-box, .cart-box {
+        width: 260px;
+        right: -30px;
+      }
+
+      .cart-box {
+        right: -70px;
+      }
+    }
+  </style>
+  <!-- Додаємо Font Awesome для іконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">Leaf Stitches</a>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="t-shirts.html">T-Shirts</a></li>
+        <li><a href="hoodies.html">Hoodies</a></li>
+        <li><a href="long-sleeves.html">Long Sleeves</a></li>
+        <li><a href="pants.html">Pants</a></li>
+        <li><a href="pajamas.html">Pajamas</a></li>
+        <li><a href="shopper-bags.html">Shopper Bags</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+        <li><a href="socks.html">Socks</a></li>
+        <li><a href="jackets.html">Jackets</a></li>
+        <li><a href="recycled-bottles.html">Recycled Plastic Bottles</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-actions">
+      <!-- Search Icon -->
+      <div class="search-container">
+        <div class="action-icon" id="searchIcon">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="search-box" id="searchBox">
+          <input type="text" placeholder="Search products...">
+          <div class="search-results">
+            <!-- Тут будуть результати пошуку -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Liked Items Icon -->
+      <div class="liked-container">
+        <div class="action-icon" id="likedIcon">
+          <i class="fas fa-heart"></i>
+          <span class="badge">2</span>
+        </div>
+
+        <div class="liked-box" id="likedBox">
+          <h3>Liked Items</h3>
+          <div class="liked-items">
+            <div class="liked-item">
+              <img src="../Images/placeholder.jpg" alt="Organic Cotton T-Shirt">
+              <div class="liked-info">
+                <h4>Organic Cotton T-Shirt</h4>
+                <p>$29.99</p>
+              </div>
+              <button class="remove-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="liked-item">
+              <img src="../Images/placeholder.jpg" alt="Recycled Material Hoodie">
+              <div class="liked-info">
+                <h4>Recycled Material Hoodie</h4>
+                <p>$49.99</p>
+              </div>
+              <button class="remove-btn"><i class="fas fa-times"></i></button>
+            </div>
+          </div>
+          <a href="wishlist.html" class="view-all-liked">View All Favorites</a>
+        </div>
+      </div>
+
+      <!-- Shopping Cart Icon -->
+      <div class="cart-container">
+        <div class="action-icon" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge">3</span>
+        </div>
+
+        <div class="cart-box" id="cartBox">
+          <h3>Shopping Cart</h3>
+          <div class="cart-items">
+            <div class="cart-item">
+              <img src="../Images/placeholder.jpg" alt="Organic Cotton T-Shirt">
+              <div class="cart-info">
+                <h4>Organic Cotton T-Shirt</h4>
+                <p>$29.99</p>
+                <div class="cart-quantity">
+                  <button class="quantity-btn">-</button>
+                  <span class="quantity-value">1</span>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="remove-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-item">
+              <img src="../Images/placeholder.jpg" alt="Bamboo Fiber Socks">
+              <div class="cart-info">
+                <h4>Bamboo Fiber Socks</h4>
+                <p>$12.99</p>
+                <div class="cart-quantity">
+                  <button class="quantity-btn">-</button>
+                  <span class="quantity-value">2</span>
+                  <button class="quantity-btn">+</button>
+                </div>
+              </div>
+              <button class="remove-btn"><i class="fas fa-times"></i></button>
+            </div>
+          </div>
+          <div class="cart-total">
+            <h4>Total:</h4>
+            <p>$55.97</p>
+          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+<main>
+  <section class="welcome">
+    <h1>Welcome to the wardrobe of wandering souls.</h1>
+    <p>
+      Where every fabric holds the echo of a poem,<br>
+      every stitch remembers a sunset,<br>
+      and nothing is ever truly forgotten.<br>
+      Here, clothes are more than threads —<br>
+      they're maps for the heart,<br>
+      armor for soft revolutions,<br>
+      and quiet prayers for beauty in a burning world.<br>
+      Walk barefoot. Feel everything.
+    </p>
+  </section>
+
+  <section class="image">
+    <img src="../Images/Home.png" alt="Worn by saints, poets, and runaways">
+  </section>
+
+  <section class="get-started">
+    <button class="button" id="getStartedBtn"><span>Get Started</span></button>
+  </section>
+
+  <section id="menu">
+    <p>Welcome to our exclusive menu! Select your desired category:</p>
+    <ul>
+      <li><a href="t-shirts.html">T-Shirts</a></li>
+      <li><a href="hoodies.html">Hoodies</a></li>
+      <li><a href="long-sleeves.html">Long Sleeves</a></li>
+      <li><a href="pants.html">Pants</a></li>
+      <li><a href="pajamas.html">Pajamas</a></li>
+      <li><a href="shopper-bags.html">Shopper Bags</a></li>
+      <li><a href="accessories.html">Accessories</a></li>
+      <li><a href="socks.html">Socks</a></li>
+      <li><a href="jackets.html">Jackets</a></li>
+      <li><a href="recycled-bottles.html">Recycled Bottles</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="social-media">
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+  </div>
+  <p>&copy; 2025 Eco Clothing Store. All rights reserved.</p>
+</footer>
+
+<script>
+  // Елементи для пошуку, вподобаного та кошика
+  const searchIcon = document.getElementById("searchIcon");
+  const searchBox = document.getElementById("searchBox");
+  const likedIcon = document.getElementById("likedIcon");
+  const likedBox = document.getElementById("likedBox");
+  const cartIcon = document.getElementById("cartIcon");
+  const cartBox = document.getElementById("cartBox");
+  const overlay = document.getElementById("overlay");
+  const getStartedBtn = document.getElementById("getStartedBtn");
+  const menu = document.getElementById("menu");
+
+  // Функція для закриття всіх відкритих боксів
+  function closeAllBoxes() {
+    searchBox.style.display = "none";
+    likedBox.style.display = "none";
+    cartBox.style.display = "none";
+    overlay.style.display = "none";
+  }
+
+  // Обробники подій для пошуку
+  searchIcon.addEventListener("click", function(e) {
+    e.stopPropagation();
+    if (searchBox.style.display === "block") {
+      closeAllBoxes();
+    } else {
+      closeAllBoxes();
+      searchBox.style.display = "block";
+      overlay.style.display = "block";
+    }
+  });
+
+  // Обробники подій для вподобаного
+  likedIcon.addEventListener("click", function(e) {
+    e.stopPropagation();
+    if (likedBox.style.display === "block") {
+      closeAllBoxes();
+    } else {
+      closeAllBoxes();
+      likedBox.style.display = "block";
+      overlay.style.display = "block";
+    }
+  });
+
+  // Обробники подій для кошика
+  cartIcon.addEventListener("click", function(e) {
+    e.stopPropagation();
+    if (cartBox.style.display === "block") {
+      closeAllBoxes();
+    } else {
+      closeAllBoxes();
+      cartBox.style.display = "block";
+      overlay.style.display = "block";
+    }
+  });
+
+  // Закриття при кліку на оверлей
+  overlay.addEventListener("click", closeAllBoxes);
+
+  // Зупинка поширення кліку на боксах
+  searchBox.addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+
+  likedBox.addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+
+  cartBox.addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+
+  // Кнопки кількості в кошику
+  const quantityBtns = document.querySelectorAll(".quantity-btn");
+  quantityBtns.forEach(btn => {
+    btn.addEventListener("click", function() {
+      const quantityElement = this.parentElement.querySelector(".quantity-value");
+      let quantity = parseInt(quantityElement.innerText);
+
+      if (this.innerText === "+") {
+        quantity++;
+      } else if (this.innerText === "-" && quantity > 1) {
+        quantity--;
+      }
+
+      quantityElement.innerText = quantity;
+      updateCartTotal();
+    });
+  });
+
+  // Кнопки видалення
+  const removeBtns = document.querySelectorAll(".remove-btn");
+  removeBtns.forEach(btn => {
+    btn.addEventListener("click", function() {
+      this.closest(".cart-item, .liked-item").remove();
+      updateCartTotal();
+      updateBadges();
+    });
+  });
+
+  // Оновлення загальної суми кошика
+  function updateCartTotal() {
+    let total = 0;
+    const cartItems = document.querySelectorAll(".cart-item");
+
+    cartItems.forEach(item => {
+      const price = parseFloat(item.querySelector(".cart-info p").innerText.replace("$", ""));
+      const quantity = parseInt(item.querySelector(".quantity-value").innerText);
+      total += price * quantity;
+    });
+
+    document.querySelector(".cart-total p").innerText = "$" + total.toFixed(2);
+  }
+
+  // Оновлення бейджів
+  function updateBadges() {
+    const likedItems = document.querySelectorAll(".liked-item").length;
+    const cartItems = document.querySelectorAll(".cart-item").length;
+
+    document.querySelector(".liked-container .badge").innerText = likedItems;
+    document.querySelector(".cart-container .badge").innerText = cartItems;
+  }
+
+  // Кнопка "Get Started"
+  getStartedBtn.addEventListener("click", function() {
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+      // Прокручуємо до меню
+      menu.scrollIntoView({behavior: "smooth"});
+    }
+  });
+
+  // Закриття боксів при кліку поза ними
+  document.addEventListener("click", function(e) {
+    if (!searchIcon.contains(e.target) && !searchBox.contains(e.target) &&
+            !likedIcon.contains(e.target) && !likedBox.contains(e.target) &&
+            !cartIcon.contains(e.target) && !cartBox.contains(e.target)) {
+      closeAllBoxes();
+    }
+  });
+</script>
